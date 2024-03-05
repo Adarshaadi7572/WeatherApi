@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+
+<body>
+    <div class="min-h-screen min-w-full bg-blue-200 flex items-center flex-col sp">
+        <h1 class="font-extralight font-mono text-5xl m-5">Weather App</h1>
+        <div class="tab-container border-solid w-40 bg-green-400 rounded-sm hover:opacity-80 border-spacing-1">
+            <p class="tab ml-7 cursor-pointer font-bold" data-userWeather>Your Weather</p>
+        </div>
+        <form class="form-container flex items-center justify-center ml-32 h-24" data-searchForm >
+            <input placeholder="Search for city..." data-searchInput class="shadow appearance-none border rounded w-[45vw] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <button class="btn w-32 h-32" type="submit" >
+                <img src="search.png" width="100" height="100" loading="lazy">
+            </button>
+        </form>
+        <div class="weatherContainer" >
+            <!-- grant location Access -->
+            <div class="allowLocationAccess">
+                <img src="location.png" width="80" height="80" loading="lazy">
+                <p>Grant Location Access</p>
+                <p>Allow Access to get wether Information</p>
+                <button class="btn active:border-solid w-40 bg-red-400 rounded-sm" data-allowAccessBtn="">Grant Access</button>
+            </div>
+            <!-- search form  -->
+            <!-- loading screen container -->
+            <div class="loadingContainer">
+       <img src="loading.gif" >
+            </div>
+
+            <!-- show weather info  -->
+            <div class="weatherInfo">
+                <!-- city name and flag -->
+                <div class="name">
+                    <p data-cityName></p>
+                    <img data-countryIcon height="34" width="34">
+                </div>
+                <!-- weather description -->
+                <p data-weatherDesc></p>
+                <!-- water icon  -->
+                <img data-weatherIcon>
+                <!-- tempreture -->
+                <p data-temp></p>
+
+                <!-- 3 cards parameter -->
+                <div class="parameter-container">
+                    <!-- card 1 -->
+                    <div class="parameter">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="85" width="85" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#63E6BE" d="M288 32c0 17.7 14.3 32 32 32h32c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32 14.3-32 32s14.3 32 32 32H352c53 0 96-43 96-96s-43-96-96-96H320c-17.7 0-32 14.3-32 32zm64 352c0 17.7 14.3 32 32 32h32c53 0 96-43 96-96s-43-96-96-96H32c-17.7 0-32 14.3-32 32s14.3 32 32 32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H384c-17.7 0-32 14.3-32 32zM128 512h32c53 0 96-43 96-96s-43-96-96-96H32c-17.7 0-32 14.3-32 32s14.3 32 32 32H160c17.7 0 32 14.3 32 32s-14.3 32-32 32H128c-17.7 0-32 14.3-32 32s14.3 32 32 32z"/></svg>
+                        <p>windspeed</p>
+                        <p data-windspeed></p>
+                    </div>
+                    <!-- card 2 -->
+                    <div class="parameter">
+                       <img src="humidity.png" height="90" width="90">
+                        <p>humidity</p>
+                        <p data-humidity></p>
+                    </div>
+
+                    <!-- card 3 -->
+                    <div class="parameter">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="85" width="85" viewBox="0 0 640 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#63E6BE" d="M0 336c0 79.5 64.5 144 144 144H512c70.7 0 128-57.3 128-128c0-61.9-44-113.6-102.4-125.4c4.1-10.7 6.4-22.4 6.4-34.6c0-53-43-96-96-96c-19.7 0-38.1 6-53.3 16.2C367 64.2 315.3 32 256 32C167.6 32 96 103.6 96 192c0 2.7 .1 5.4 .2 8.1C40.2 219.8 0 273.2 0 336z"/></svg>
+                        <p>clouds</p>
+                        <p data-cloudiness></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

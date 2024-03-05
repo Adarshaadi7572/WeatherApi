@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.weatherInfo{
+
+    display: none;
+}
+ .loadingContainer{
+
+     display: none;
+ }
+  .allowLocationAccess{
+    display: none;
+}
+.weatherInfo.active{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 45vw;
+    font-weight: bold;
+    font-size: 1.2rem;
+    background-color: rgba(299,299,299,0.4);
+    border-radius: 24px;
+    padding: 1rem 0rem;
+}
+.loadingContainer.active{
+    
+     display: block;
+    }
+  .allowLocationAccess.active{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 45vw;
+    height: 13rem;
+    font-weight: bold;
+    background-color: cadetblue;
+    padding: 0.5rem;
+    border-radius: 0.7rem;
+}
+.allowLocationAccess.active .btn:hover{
+          opacity: 0.8;
+}
+.allowLocationAccess.active p{
+     font-size: 1rem;
+   
+}
+@media only screen and (max-width: 700px) {
+    .allowLocationAccess.active p{
+         font-size: 2vw;
+       
+    }
+   
+}
+@media only screen and (max-width: 500px) {
+    .allowLocationAccess.active .btn{
+         width: 30vw;
+       
+    }
+    .form-container{
+      height: 2rem;
+    }
+}
+
+.weatherInfo.active .name{
+     display: flex;
+     max-width: 13rem;
+     align-items: center;
+     justify-content: space-around;
+    }
+    .weatherInfo.active .name p{
+        font-weight: bold;
+        font-size: 2rem;
+}
+.weatherInfo.active .parameter-container{
+    display: flex;
+    justify-content: space-around;
+    width: 45vw;
+    margin-top: 2rem;
+    
+}
+@media only screen and (max-width: 800px) {
+    .weatherInfo.active .parameter-container{
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+}
+@media only screen and (max-width: 499px) {
+    .form-container{
+      margin-right: 2rem;
+    }
+    
+    .weatherInfo.active .name p{
+       font-weight: bold;
+         font-size: 5vw;
+    }
+    
+}
+.parameter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
